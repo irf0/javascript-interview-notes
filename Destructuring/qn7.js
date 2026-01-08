@@ -1,0 +1,9 @@
+let x = 5;
+let y = 10;
+
+[x, y] = [y, x];
+
+console.log(x, y);
+
+//Output => 10 5
+//Reason => Because order does matter in Arrays.
