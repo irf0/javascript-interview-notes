@@ -4,21 +4,21 @@
 //-----------------------------------------------------------------------------//
 
 //Scenario 1
-// function outer() {
-//   let count = 0;
+function outer() {
+    let count = 0;
 
-//   function inner() {
-//     count++;
-//     console.log(count);
-//   }
+    function inner() {
+        count++;
+        console.log(count);
+    }
 
-//   return inner;
-// }
+    return inner;
+}
 
-// const fn = outer();
-// fn();
-// fn();
-// fn();
+const fn = outer();
+fn();
+fn();
+fn();
 
 //Output => 1,2,3.
 //Reason => The inner function forms a closure over count. Because the returned function still references count, JavaScript keeps it alive in memory even after outer has finished executing.
