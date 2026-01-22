@@ -1,0 +1,78 @@
+/* =========================================================
+   CSS SPECIFICITY — INTERVIEW NOTES
+   ========================================================= */
+
+/*
+Specificity decides which CSS rule wins
+when multiple rules target the same element
+*/
+
+/* ---------------------------------------------------------
+   SPECIFICITY ORDER (LOW → HIGH)
+   --------------------------------------------------------- */
+
+/*
+Element / pseudo-element      → 0 0 0 1
+Class / attribute / pseudo    → 0 0 1 0
+ID                            → 0 1 0 0
+Inline style                  → 1 0 0 0
+!important                    → overrides all
+*/
+
+/* ---------------------------------------------------------
+   EXAMPLES
+   --------------------------------------------------------- */
+
+/*
+p                 → 0 0 0 1
+.card             → 0 0 1 0
+#header           → 0 1 0 0
+#nav .item p      → 0 1 1 1
+*/
+
+/* ---------------------------------------------------------
+   SOURCE ORDER RULE
+   --------------------------------------------------------- */
+
+/*
+If specificity is equal,
+the rule written later wins
+*/
+
+/* ---------------------------------------------------------
+   PSEUDO CLASSES / ELEMENTS
+   --------------------------------------------------------- */
+
+/*
+:hover, :focus    → class level
+::before, ::after → element level
+*/
+
+/* ---------------------------------------------------------
+   !IMPORTANT (USE CAREFULLY)
+   --------------------------------------------------------- */
+
+/*
+Overrides specificity
+Avoid in maintainable code
+*/
+
+/* ---------------------------------------------------------
+   DEBUGGING ORDER
+   --------------------------------------------------------- */
+
+/*
+1. Specificity
+2. Source order
+3. Inheritance
+4. !important
+*/
+
+/* ---------------------------------------------------------
+   MENTAL MODEL
+   --------------------------------------------------------- */
+
+/*
+More specific wins
+If equal → last rule wins
+*/

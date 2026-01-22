@@ -15,4 +15,5 @@ function outer() {
 
 outer();
 
-//Output => undefined 2. The first console.log prints undefined because var x is hoisted inside outer, shadowing the global x. After assignment, x becomes 2, and the inner function accesses it via the scope chain, so it logs 2.
+//Output => undefined, 2.
+//Reason => The first console.log prints undefined because var x is hoisted inside outer, shadowing the global x. After assignment, x becomes 2, and the inner function accesses it via the scope chain, so it logs 2.

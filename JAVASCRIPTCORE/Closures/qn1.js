@@ -1,6 +1,6 @@
 //A closure is created when an inner function accesses variables from its outer scope
 //The inner function remembers the variables, not their values.
-//Closures are used for ->data privacy, counters, memoization.
+//Closures are used for -> data privacy, counters, memoization.
 //-----------------------------------------------------------------------------//
 
 //Scenario 1

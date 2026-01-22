@@ -1,0 +1,91 @@
+/* =========================================================
+   FLEXBOX — INTERVIEW NOTES
+   ========================================================= */
+
+/*
+Flexbox = one-dimensional layout system
+(row OR column)
+*/
+
+/* ---------------------------------------------------------
+   FLEX CONTAINER
+   --------------------------------------------------------- */
+
+/*
+display: flex;
+Creates flex context
+*/
+
+ /*
+flex-direction:
+row (default)
+column
+row-reverse
+column-reverse
+*/
+
+/* ---------------------------------------------------------
+   AXIS RULE (CRITICAL)
+   --------------------------------------------------------- */
+
+/*
+Main axis  → controlled by justify-content
+Cross axis → controlled by align-items
+
+row    → main = horizontal
+column → main = vertical
+*/
+
+/* ---------------------------------------------------------
+   JUSTIFY CONTENT (MAIN AXIS)
+   --------------------------------------------------------- */
+
+/*
+justify-content:
+flex-start
+center
+flex-end
+space-between
+space-around
+space-evenly
+*/
+
+/* ---------------------------------------------------------
+   ALIGN ITEMS (CROSS AXIS)
+   --------------------------------------------------------- */
+
+/*
+align-items:
+stretch (default)
+center
+flex-start
+flex-end
+baseline
+*/
+
+/* ---------------------------------------------------------
+   FLEX ITEMS
+   --------------------------------------------------------- */
+
+/*
+flex-grow   → how much item grows
+flex-shrink → how much item shrinks
+flex-basis  → initial size
+*/
+
+/*
+Shortcut:
+flex: grow shrink basis
+flex: 1
+flex: 1 0 200px
+*/
+
+/* ---------------------------------------------------------
+   CENTERING TRICK
+   --------------------------------------------------------- */
+
+/*
+display: flex;
+justify-content: center;
+align-items: center;
+*/

@@ -1,0 +1,82 @@
+/* =========================================================
+   DISPLAY vs VISIBILITY vs OPACITY — INTERVIEW NOTES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   DISPLAY
+   --------------------------------------------------------- */
+
+/*
+display controls layout participation
+*/
+
+/*
+display: none;
+- Element removed from layout
+- Takes no space
+- Not clickable
+- Not focusable
+- Removed from accessibility tree
+*/
+
+/* ---------------------------------------------------------
+   VISIBILITY
+   --------------------------------------------------------- */
+
+/*
+visibility controls visibility only
+*/
+
+/*
+visibility: hidden;
+- Element invisible
+- Space preserved
+- Not clickable
+- Not focusable
+*/
+
+/* ---------------------------------------------------------
+   OPACITY
+   --------------------------------------------------------- */
+
+/*
+opacity controls transparency
+*/
+
+/*
+opacity: 0;
+- Element invisible
+- Space preserved
+- Still clickable
+- Still focusable
+- Children inherit opacity
+*/
+
+/* ---------------------------------------------------------
+   COMPARISON SUMMARY
+   --------------------------------------------------------- */
+
+/*
+display: none        → no layout, no interaction
+visibility: hidden  → layout yes, interaction no
+opacity: 0          → layout yes, interaction yes
+*/
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+/*
+Animate opacity / visibility
+Never animate display
+*/
+
+/* ---------------------------------------------------------
+   MENTAL MODEL
+   --------------------------------------------------------- */
+
+/*
+display    → removes
+visibility → hides
+opacity    → fades
+*/
