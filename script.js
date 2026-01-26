@@ -48,6 +48,23 @@ function findMaxElem(arr) {
 console.log(findMaxElem(arr))
 
 //Reverse an array
+
+function reverseArrBruteForce(arr) { //extra space reqd. O(n)
+    const resultArr = []
+
+    for (i = arr.length - 1; i >= 0; i--) { //start the loop at the end 
+        resultArr.push(arr[i])
+    }
+    return resultArr
+
+}
+console.log(reverseArrBruteForce(arr))
+
+
+
+
+
+
 function reverseArrayOpt(arr) {
     let left = 0
     let right = arr.length - 1
@@ -59,4 +76,4 @@ function reverseArrayOpt(arr) {
     }
     return arr
 }
-console.log(reverseArrayOpt(arr))
+// console.log(reverseArrayOpt(arr))
