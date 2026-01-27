@@ -35,5 +35,19 @@ function reverseArrayOpt(arr) {
     return arr
 }
 
-console.log(reverseArrayOpt([1, 2, 3, 4, 5, 6]))
+// console.log(reverseArrayOpt([1, 2, 3, 4, 5, 6]))
 
+
+function reverseArrayOptt(arr) {
+    let left = 0
+    let right = arr.length - 1 //start from end 
+
+    while (left < right) {
+        [arr[left], arr[right]] = [arr[right], arr[left]]
+        left++
+        right--
+    }
+    return arr
+}
+
+console.log(reverseArrayOptt([1, 2, 3, 4, 5, 6]))
