@@ -1,4 +1,4 @@
-const arr = [1, 4, 7, 8, 25, 87, 14, 3, 2, 15, 9]
+const arr = [1, 0, 4, 7, 8, 0, 25, 87, 0, 14, 3, 2, 15, 0, 0, 0, 9]
 
 // function maxMin(arr) {
 //     let min = arr[0]
@@ -58,7 +58,7 @@ function reverseArrBruteForce(arr) { //extra space reqd. O(n)
     return resultArr
 
 }
-console.log(reverseArrBruteForce(arr))
+// console.log(reverseArrBruteForce(arr))
 
 
 
@@ -77,3 +77,61 @@ function reverseArrayOpt(arr) {
     return arr
 }
 // console.log(reverseArrayOpt(arr))
+
+function moveZerosBt(arr) {
+    const nonZeroElems = arr.filter((elem) => elem !== 0)
+    const zeroElems = new Array(arr.length - nonZeroElems.length).fill(0)
+
+    return [...nonZeroElems, ...zeroElems]
+}
+
+function moveZerosOpt(arr) {
+    let i = 0
+
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] !== 0) {
+            arr[j] = arr[i]
+            i++
+        }
+    }
+
+    while (i < arr.length) {
+        arr[i++] = 0
+    }
+
+    return arr
+}
+
+function missingNumOpt(arr) {
+    const n = arr.length
+    const expectedSum = (n * (n + 1)) / 2
+    let actualSum = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        actualSum += arr[i]
+    }
+    return expectedSum - actualSum
+}
+
+console.log(missingNumOpt([0, 2, 3])) //1
+
+function findLargestElem(arr) {
+    let max = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return { max }
+}
+
+function maxSubArrayOpt(arr) {
+    let currenSum = arr[0]
+    let maxSum = arr[0]
+
+    for (let i = 1; i < arr.length; i++) {
+        currenSum = Math.max(arr[i], currenSum + arr[i])
+        maxSum = (currenSum, maxSum)
+    }
+    return maxSum
+}
