@@ -40,7 +40,6 @@ function twoSum(nums, target) {
             seen[nums[i]] = i // If not found, store the current number with its index so it can be used later
         }
     }
-
 }
 
 // console.log(twoSum([12, 4, 6, 9, 3, 15, 8, 7, 11, 5, 2, 10, 14], 158)); //[3,4]
