@@ -135,3 +135,80 @@ function maxSubArrayOpt(arr) {
     }
     return maxSum
 }
+
+function twoosum(arr) {
+    let seen = {}
+    for (let i = 0; i < arr.length; i++) {
+        const needed = target - arr[i]
+        if (seen[needed] !== undefined) { //means it is available in the hashmap already
+            return [seen[needed], i]
+
+        } else {
+            seen[arr[i]] = arr[i] //store the current item in the hashmap
+        }
+    }
+}
+
+function findMin(arr) {
+    let min = arr[0]
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i] //if i find that the current elem is smaller than my min, i'll update my min to new value and keep doing it through out the loop  
+        }
+    }
+    return min
+}
+
+function movezero(arr) {
+    let i = 0
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] !== 0) {
+            arr[j] = i
+            i++
+        }
+    }
+
+    while (i < arr.length) {
+        arr[i] += 0
+    }
+
+    return arr
+}
+
+function removeDups(arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == arr[i + 1]) { //means duplicacy prsent
+
+        }
+    }
+
+}
+
+function reverseString(str) {
+    let left = 0
+    let right = str.length - 1
+
+    while (str[left] < str[right]) {
+        [str[left], str[right]] = [str[right], str[left]]
+        left++
+        right--
+    }
+    return str
+}
+
+
+function outerFunc() {
+    let name = "irfan"
+
+    function innerFunc() {
+        console.log(name)
+    }
+
+    return innerFunc
+}
+
+const myClosureFunc = outerFunc() //outerFunc() is done execution here but still remembers innerFunc outside
+
+myClosureFunc()

@@ -13,5 +13,4 @@ function isSortedOptimal(arr) {
         }
     }
     return true  //means sorted
-
 }
