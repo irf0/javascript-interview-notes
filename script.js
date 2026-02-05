@@ -212,3 +212,57 @@ function outerFunc() {
 const myClosureFunc = outerFunc() //outerFunc() is done execution here but still remembers innerFunc outside
 
 myClosureFunc()
+
+function checkVowels(str) {
+    let vowels = 'aieou'
+    let count = 0
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i].toLowerCase())) {
+            count++
+        }
+    }
+    return count
+
+}
+
+console.log(checkVowels("Hello"))
+
+function isAnagramBrut(str1, str2) {
+    if (str1.length !== str2.length) return false //no need to move ahead if length condn not met
+    let str1LowerCs = str1.toLowerCase()
+    let str2LowerCs = str2.toLowerCase()
+
+    let sortedStr1 = str1LowerCs.split('').sort().join('')
+    let sortedStr2 = str2LowerCs.split('').sort().join('')
+
+    if (sortedStr1 === sortedStr2) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+console.log("1. Script Start");
+
+setTimeout(() => {
+    console.log("4. Macrotask (setTimeout)");
+}, 0);
+
+function microtaskLoop() {
+    Promise.resolve().then(() => {
+        // This schedules another microtask immediately
+        microtaskLoop();
+    });
+}
+
+Promise.resolve().then(() => {
+    console.log("2. First Microtask");
+}).then(() => {
+    console.log("3. Second Microtask");
+});
+
+// microtaskLoop(); // If I uncomment this, what happens to the setTimeout?
+
+console.log("5. Script End");

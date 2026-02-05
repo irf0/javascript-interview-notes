@@ -18,10 +18,23 @@ const sortedArr = [1, 1, 2, 3, 3, 3, 4, 5, 5]; // Expected Output: [1, 2, 3, 4, 
 //3. If NO -> means it's a Duplicate so j moves to next element.
 //4. If YES -> means it's a new unique element. We increment i to create space and copy arr[j] into that new spot.
 
-function removeDuplicates(arr) {
-    let i = 0
+function removeDuplicatesBrute(arr) {
+    let result = []
 
-    for (j = 1; j < arr.length; j++) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i + 1]) {
+            result.push(arr[i])
+        }
+    }
+
+    return result
+}
+
+
+function removeDuplicatesOpt(arr) {
+    let i = 0  //i is slow pointer tracks the last unique element position
+
+    for (j = 1; j < arr.length; j++) { //j is fast pointer scans the array
         if (arr[j] !== arr[i]) {
             i++
             arr[i] = arr[j]
@@ -32,7 +45,7 @@ function removeDuplicates(arr) {
     }
     return i + 1
 }
-
-const uniqueElement = removeDuplicates(sortedArr)
+const uniqueElement = removeDuplicatesOpt(sortedArr)
 console.log(sortedArr.slice(0, uniqueElement))
 
+// console.log(uniqueElement)
